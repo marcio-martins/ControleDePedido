@@ -1,5 +1,6 @@
 package com.gmail.amarciosm.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,14 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
+	public List<Categoria> listar(){
+		List<Categoria> lista = categoriaRepository.findAll();
+		return lista;
+	}
+	
 	public Categoria buscar(Integer id){
 		Optional<Categoria> lista = categoriaRepository.findById(id);
 		return lista.orElse(null);
 	}
+	
 }

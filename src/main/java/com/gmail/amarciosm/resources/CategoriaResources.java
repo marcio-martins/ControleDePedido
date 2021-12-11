@@ -1,5 +1,7 @@
 package com.gmail.amarciosm.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,12 @@ public class CategoriaResources {
 
 	@Autowired
 	private CategoriaService categoriaService;
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<?> listar() {
+		List<Categoria> lista = categoriaService.listar();
+		return ResponseEntity.ok().body(lista);
+	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> listar(@PathVariable Integer id) {
