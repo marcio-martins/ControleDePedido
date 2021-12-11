@@ -1,9 +1,9 @@
-package com.gmail.amarciosm.repositories;
+package com.gmail.amarciosm.controledepedidos.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.gmail.amarciosm.domain.Produto;
+import com.gmail.amarciosm.controledepedidos.domain.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {

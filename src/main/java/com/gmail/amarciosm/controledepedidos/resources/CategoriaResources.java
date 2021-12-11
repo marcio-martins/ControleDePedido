@@ -1,4 +1,4 @@
-package com.gmail.amarciosm.resources;
+package com.gmail.amarciosm.controledepedidos.resources;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gmail.amarciosm.domain.Categoria;
-import com.gmail.amarciosm.services.CategoriaService;
+import com.gmail.amarciosm.controledepedidos.domain.Categoria;
+import com.gmail.amarciosm.controledepedidos.services.CategoriaService;
 
 @RestController
 @RequestMapping(value = "/categorias")

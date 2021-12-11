@@ -1,4 +1,4 @@
-package com.gmail.amarciosm;
+package com.gmail.amarciosm.controledepedidos;
 
 import java.util.Arrays;
 
@@ -7,10 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.gmail.amarciosm.domain.Categoria;
-import com.gmail.amarciosm.domain.Produto;
-import com.gmail.amarciosm.repositories.CategoriaRepository;
-import com.gmail.amarciosm.repositories.ProdutoRepository;
+import com.gmail.amarciosm.controledepedidos.domain.Categoria;
+import com.gmail.amarciosm.controledepedidos.domain.Produto;
+import com.gmail.amarciosm.controledepedidos.repositories.CategoriaRepository;
+import com.gmail.amarciosm.controledepedidos.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class ControleDePedidosApplication implements CommandLineRunner {

@@ -1,4 +1,4 @@
-package com.gmail.amarciosm.services;
+package com.gmail.amarciosm.controledepedidos.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gmail.amarciosm.domain.Categoria;
-import com.gmail.amarciosm.repositories.CategoriaRepository;
+import com.gmail.amarciosm.controledepedidos.domain.Categoria;
+import com.gmail.amarciosm.controledepedidos.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {

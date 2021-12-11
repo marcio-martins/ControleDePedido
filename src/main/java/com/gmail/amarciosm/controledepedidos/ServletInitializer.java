@@ -1,4 +1,4 @@
-package com.gmail.amarciosm;
+package com.gmail.amarciosm.controledepedidos;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
