@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gmail.amarciosm.controledepedidos.domain.Categoria;
+import com.gmail.amarciosm.controledepedidos.exception.MyObjectNotFoundException;
 import com.gmail.amarciosm.controledepedidos.repositories.CategoriaRepository;
 
 @Service
@@ -16,13 +17,14 @@ public class CategoriaService {
 	private CategoriaRepository categoriaRepository;
 	
 	public List<Categoria> listar(){
-		List<Categoria> lista = categoriaRepository.findAll();
+		List<Categoria> lista = categoriaRepository.findAll(); 	
 		return lista;
 	}
 	
 	public Categoria buscar(Integer id){
 		Optional<Categoria> lista = categoriaRepository.findById(id);
-		return lista.orElse(null);
+		return lista.orElseThrow(() -> new MyObjectNotFoundException(
+				"Objeto não encontrado. id = " + id));
 	}
 	
 }
