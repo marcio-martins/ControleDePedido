@@ -31,8 +31,6 @@ public class Cidade implements Serializable {
     @NotEmpty
     @Column(length = 20)
     private String nome;
-    
-    private Double preco;
 	
     @ManyToOne
     @JoinColumn(name = "estado_id")
@@ -42,11 +40,10 @@ public class Cidade implements Serializable {
 		super();
 	}
 
-	public Cidade(Integer id, @NotEmpty String nome, Double preco) {
+	public Cidade(Integer id, @NotEmpty String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.preco = preco;
 	}
 
 	public Integer getId() {
@@ -63,14 +60,6 @@ public class Cidade implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
 	}
 
 	public Estado getEstado() {
