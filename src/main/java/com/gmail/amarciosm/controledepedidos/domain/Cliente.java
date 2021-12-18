@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gmail.amarciosm.controledepedidos.enuns.TipoCliente;
 
 @Entity
@@ -42,6 +43,7 @@ public class Cliente implements Serializable {
     
     private Integer tipoCliente;
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
     
