@@ -24,8 +24,6 @@ public class Estado implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotEmpty
-    @Column(length = 20)
     private String nome;
     
     @OneToMany(mappedBy = "estado")
@@ -36,7 +34,7 @@ public class Estado implements Serializable {
 		super();
 	}
     
-	public Estado(Integer id, @NotEmpty String nome) {
+	public Estado(Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;

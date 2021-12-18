@@ -23,8 +23,6 @@ public class Cidade implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotEmpty
-    @Column(length = 20)
     private String nome;
 	
     @ManyToOne
@@ -36,7 +34,7 @@ public class Cidade implements Serializable {
 		super();
 	}
 
-	public Cidade(Integer id, @NotEmpty String nome) {
+	public Cidade(Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;

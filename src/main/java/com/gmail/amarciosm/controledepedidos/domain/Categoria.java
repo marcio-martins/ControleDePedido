@@ -24,8 +24,6 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotEmpty
-    @Column(length = 20)
     private String nome;
     
     @JsonManagedReference
@@ -36,7 +34,7 @@ public class Categoria implements Serializable {
 		super();
 	}
     
-	public Categoria(Integer id, @NotEmpty String nome) {
+	public Categoria(Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;

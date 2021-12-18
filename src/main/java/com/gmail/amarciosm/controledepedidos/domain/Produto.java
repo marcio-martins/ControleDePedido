@@ -26,8 +26,6 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotEmpty
-    @Column(length = 20)
     private String nome;
     
     private Double preco;
@@ -44,7 +42,7 @@ public class Produto implements Serializable {
 		super();
 	}
 
-	public Produto(Integer id, @NotEmpty String nome, Double preco) {
+	public Produto(Integer id, String nome, Double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;

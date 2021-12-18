@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gmail.amarciosm.controledepedidos.enuns.TipoCliente;
 
@@ -29,16 +30,10 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotEmpty
-    @Column(length = 20)
     private String nome;
     
-    @NotEmpty
-    @Column(length = 20)
     private String email;
     
-    @NotEmpty
-    @Column(length = 20)
     private String cpfCnpj;
     
     private Integer tipoCliente;
@@ -51,11 +46,15 @@ public class Cliente implements Serializable {
     @CollectionTable(name="telefones")
     private Set<String> telefones = new HashSet<>();
     
+    @JsonBackReference
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos = new ArrayList<>();
+    
 	public Cliente() {
 		super();
 	}
 	
-	public Cliente(Integer id, @NotEmpty String nome, @NotEmpty String email, @NotEmpty String cpfCnpj,
+	public Cliente(Integer id, String nome, String email, String cpfCnpj,
 			Integer tipoCliente) {
 		super();
 		this.id = id;
@@ -123,6 +122,14 @@ public class Cliente implements Serializable {
 
 	public void setTipoCliente(Integer tipoCliente) {
 		this.tipoCliente = tipoCliente;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 
 	@Override
