@@ -35,7 +35,7 @@ public class Produto implements Serializable {
     private Double preco;
 	
     @ManyToMany
-    @JsonBackReference
+    @JsonIgnore
     @JoinTable(
     		name = "produto_categoria",
     		joinColumns = @JoinColumn(columnDefinition = "produto_id"),
