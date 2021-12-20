@@ -67,7 +67,7 @@ public class ControleDePedidosApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+		/*
 		Categoria cat1 = new Categoria(null,"Informática");
 		Categoria cat2 = new Categoria(null,"Escritório");
 		
@@ -142,6 +142,7 @@ public class ControleDePedidosApplication implements CommandLineRunner {
 		p3.getItens().add(ip2);
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1,ip2,ip3));
+		*/
 	}
 
 }
