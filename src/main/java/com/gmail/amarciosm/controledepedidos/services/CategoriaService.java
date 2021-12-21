@@ -32,7 +32,12 @@ public class CategoriaService {
 	}
 
 	public Categoria update(Categoria categoria) {
+		find(categoria.getId());
 		return categoriaRepository.save(categoria);
 	}
 	
+	public void delete(Integer id) {
+		find(id);
+		categoriaRepository.deleteById(id);
+	}
 }
