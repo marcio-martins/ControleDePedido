@@ -27,4 +27,12 @@ public class CategoriaService {
 				"Objeto não encontrado. id = " + id));
 	}
 	
+	public Categoria insert(Categoria categoria){
+		return categoriaRepository.save(categoria);
+	}
+
+	public Categoria update(Categoria categoria) {
+		return categoriaRepository.save(categoria);
+	}
+	
 }
