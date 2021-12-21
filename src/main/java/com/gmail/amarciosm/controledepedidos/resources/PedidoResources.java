@@ -20,15 +20,15 @@ public class PedidoResources {
 	private PedidoService pedidoService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> listar() {
-		List<Pedido> lista = pedidoService.listar();
+	public ResponseEntity<?> list() {
+		List<Pedido> lista = pedidoService.list();
 		return ResponseEntity.ok().body(lista);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> listar(@PathVariable Integer id) {
-		Pedido categoria = pedidoService.buscar(id);
-		return ResponseEntity.ok().body(categoria);
+	public ResponseEntity<Pedido> find(@PathVariable Integer id) {
+		Pedido pedido = pedidoService.find(id);
+		return ResponseEntity.ok().body(pedido);
 	}
 	
 }

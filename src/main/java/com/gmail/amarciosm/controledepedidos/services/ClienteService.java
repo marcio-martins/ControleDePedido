@@ -16,12 +16,12 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository categoriaRepository;
 	
-	public List<Cliente> listar(){
+	public List<Cliente> list(){
 		List<Cliente> lista = categoriaRepository.findAll(); 	
 		return lista;
 	}
 	
-	public Cliente buscar(Integer id){
+	public Cliente find(Integer id){
 		Optional<Cliente> lista = categoriaRepository.findById(id);
 		return lista.orElseThrow(() -> new MyObjectNotFoundException(
 				"Objeto não encontrado. id = " + id));

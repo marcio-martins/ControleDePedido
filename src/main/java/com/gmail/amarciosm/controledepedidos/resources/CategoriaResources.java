@@ -24,13 +24,13 @@ public class CategoriaResources {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<?> listar() {
-		List<Categoria> lista = categoriaService.listar();
+		List<Categoria> lista = categoriaService.list();
 		return ResponseEntity.ok().body(lista);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> listar(@PathVariable Integer id) {
-		Categoria categoria = categoriaService.buscar(id);
+	public ResponseEntity<Categoria> listar(@PathVariable Integer id) {
+		Categoria categoria = categoriaService.find(id);
 		return ResponseEntity.ok().body(categoria);
 	}
 	

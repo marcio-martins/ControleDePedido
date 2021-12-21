@@ -16,12 +16,12 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	public List<Categoria> listar(){
+	public List<Categoria> list(){
 		List<Categoria> lista = categoriaRepository.findAll(); 	
 		return lista;
 	}
 	
-	public Categoria buscar(Integer id){
+	public Categoria find(Integer id){
 		Optional<Categoria> lista = categoriaRepository.findById(id);
 		return lista.orElseThrow(() -> new MyObjectNotFoundException(
 				"Objeto não encontrado. id = " + id));
