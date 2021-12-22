@@ -22,4 +22,16 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
 	
+	@ExceptionHandler(MyDataIntegrityViolationException.class)
+	public ResponseEntity<StandardError> dataIntegrityViolation(
+			MyDataIntegrityViolationException e, HttpServletRequest request){
+		
+		StandardError error = new StandardError(
+				HttpStatus.BAD_REQUEST.value(), 
+				e.getMessage(), 
+				System.currentTimeMillis());
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+	}
+	
 }

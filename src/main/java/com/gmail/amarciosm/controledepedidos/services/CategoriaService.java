@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.gmail.amarciosm.controledepedidos.domain.Categoria;
@@ -38,6 +39,10 @@ public class CategoriaService {
 	
 	public void delete(Integer id) {
 		find(id);
-		categoriaRepository.deleteById(id);
+		try {
+			categoriaRepository.deleteById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new MyObjectNotFoundException("Não é possível excluir categorias que têm produtos relacionados!");
+		}
 	}
 }
