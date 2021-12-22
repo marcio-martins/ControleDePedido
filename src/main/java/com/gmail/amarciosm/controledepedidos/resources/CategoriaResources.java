@@ -23,8 +23,8 @@ public class CategoriaResources {
 	private CategoriaService categoriaService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> listar() {
-		List<Categoria> lista = categoriaService.list();
+	public ResponseEntity<List<Categoria>> findAll() {
+		List<Categoria> lista = categoriaService.findAll();
 		return ResponseEntity.ok().body(lista);
 	}
 	

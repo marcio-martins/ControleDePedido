@@ -20,8 +20,8 @@ public class ClienteResources {
 	private ClienteService clienteService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> listar() {
-		List<Cliente> lista = clienteService.list();
+	public ResponseEntity<List<Cliente>> findAll() {
+		List<Cliente> lista = clienteService.findAll();
 		return ResponseEntity.ok().body(lista);
 	}
 	

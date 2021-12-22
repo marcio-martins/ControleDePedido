@@ -20,8 +20,8 @@ public class PedidoResources {
 	private PedidoService pedidoService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> list() {
-		List<Pedido> lista = pedidoService.list();
+	public ResponseEntity<List<Pedido>> findAll() {
+		List<Pedido> lista = pedidoService.findAll();
 		return ResponseEntity.ok().body(lista);
 	}
 	
